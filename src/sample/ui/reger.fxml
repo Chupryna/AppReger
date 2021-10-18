@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.Controller">
+   <children>
+      <Label layoutX="20.0" layoutY="430.0" text="Усього: " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="430.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="allLabel" layoutX="80.0" layoutY="430.0" prefHeight="17.0" prefWidth="49.0" text="0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="430.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="goodLabel" layoutX="80.0" layoutY="450.0" text="0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="450.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="450.0" text="Успішно:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="450.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label fx:id="badLabel" layoutX="80.0" layoutY="472.0" text="0" AnchorPane.leftAnchor="80.0" AnchorPane.topAnchor="472.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="472.0" text="Невдало:" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="472.0">
+         <font>
+            <Font size="13.0" />
+         </font></Label>
+      <Button fx:id="startBtn" layoutX="20.0" layoutY="302.0" mnemonicParsing="false" onAction="#start" prefHeight="35.0" prefWidth="350.0" text="Старт" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="550.0" />
+      <Button fx:id="nextBtn" layoutX="20.0" layoutY="344.0" mnemonicParsing="false" onAction="#nextAction" prefHeight="35.0" prefWidth="160.0" text="Далі" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="723.0" />
+      <Button fx:id="driverBtn" layoutX="149.0" layoutY="30.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Драйвер" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="15.0" />
+      <TextArea fx:id="log" layoutX="290.0" layoutY="30.0" prefHeight="454.0" prefWidth="510.0" AnchorPane.bottomAnchor="131.0" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="15.0" />
+      <CheckBox fx:id="changeEmailCb" layoutX="24.0" layoutY="347.0" mnemonicParsing="false" text="Прив'язати пошту" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="347.0">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label fx:id="numberEmailsLabel" layoutX="290.0" layoutY="336.0" prefHeight="17.0" prefWidth="49.0" text="0" AnchorPane.leftAnchor="290.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label layoutX="210.0" layoutY="335.0" text="Пошти:" AnchorPane.leftAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Button fx:id="proxiesBtn" layoutX="20.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadProxies" prefHeight="30.0" prefWidth="100.0" text="Proxy" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="15.0" />
+      <CheckBox fx:id="stopCb" layoutX="24.0" layoutY="320.0" mnemonicParsing="false" text="Ручник">
+         <font>
+            <Font size="13.0" />
+         </font></CheckBox>
+      <Label layoutX="210.0" layoutY="356.0" text="Proxy:" AnchorPane.leftAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="numberProxyLabel" layoutX="290.0" layoutY="357.0" prefHeight="17.0" prefWidth="49.0" text="0" AnchorPane.leftAnchor="290.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <CheckBox fx:id="makeProgrevCb" layoutX="24.0" layoutY="376.0" mnemonicParsing="false" text="Робити прогрів">
+         <font>
+            <Font size="14.0" />
+         </font></CheckBox>
+      <Button layoutX="150.0" layoutY="75.0" mnemonicParsing="false" onAction="#loadUserAgents" prefHeight="30.0" prefWidth="100.0" text="User agent" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="60.0" />
+      <Button layoutX="20.0" layoutY="75.0" mnemonicParsing="false" onAction="#loadEmails" prefHeight="30.0" prefWidth="100.0" text="Email" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="60.0" />
+      <Label layoutX="210.0" layoutY="315.0" text="User agent:" AnchorPane.leftAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Label fx:id="numberUALabel" layoutX="290.0" layoutY="315.0" prefHeight="17.0" prefWidth="49.0" text="0" AnchorPane.leftAnchor="290.0">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <TextField fx:id="apiKeyEt" layoutX="91.0" layoutY="182.0" prefHeight="25.0" prefWidth="261.0" promptText="API key" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="548.0" />
+      <TextField fx:id="countryEt" layoutX="91.0" layoutY="219.0" prefHeight="25.0" prefWidth="90.0" promptText="Країна (Код)" AnchorPane.leftAnchor="91.0" />
+      <TextField fx:id="threadsCountEt" layoutX="95.0" layoutY="124.0" prefHeight="25.0" prefWidth="120.0" promptText="Потоки" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="110.0" />
+      <Label layoutX="20.0" layoutY="126.0" text="Потоки: " AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="110.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="183.0" text="API Key:" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="222.0" text="Країна:" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="20.0" layoutY="255.0" text="Оператор:" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="operatorEt" layoutX="91.0" layoutY="252.0" prefHeight="25.0" prefWidth="90.0" promptText="Оператор" AnchorPane.leftAnchor="91.0" />
+      <ComboBox fx:id="smsServiceComboBox" layoutX="20.0" layoutY="146.0" prefHeight="25.0" prefWidth="335.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="550.0" />
+      <Button layoutX="265.0" layoutY="30.0" mnemonicParsing="false" onAction="#loadFollowers" prefHeight="30.0" prefWidth="100.0" text="Для підписок" AnchorPane.leftAnchor="255.0" AnchorPane.topAnchor="15.0" />
+      <Label fx:id="numberFollowersLabel" layoutX="290.0" layoutY="379.0" prefHeight="17.0" prefWidth="49.0" text="0" AnchorPane.leftAnchor="290.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="210.0" layoutY="378.0" text="Підписки:" AnchorPane.leftAnchor="210.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="smsCountOnNumberEt" layoutX="282.0" layoutY="219.0" prefHeight="25.0" prefWidth="70.0" />
+      <Label layoutX="207.0" layoutY="222.0" text="Смс на №:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="stopBtn" layoutX="189.0" layoutY="545.0" mnemonicParsing="false" onAction="#stop" prefHeight="35.0" prefWidth="160.0" text="Стоп" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="550.0" />
+      <Label layoutX="206.0" layoutY="255.0" text="Капч на №:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="captchaCountOnNumberEt" layoutX="282.0" layoutY="252.0" prefHeight="25.0" prefWidth="70.0" />
+      <Label layoutX="209.0" layoutY="429.0" text="Аккаунтів на №:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="accountsOnNumberLabel" layoutX="311.0" layoutY="429.0" text="0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="registrationCountEt" layoutX="89.0" layoutY="285.0" prefHeight="25.0" prefWidth="90.0" promptText="К-сть реєстрацій" />
+      <Label layoutX="18.0" layoutY="288.0" text="К-сть рег:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="useRotationCb" layoutX="374.0" layoutY="500.0" mnemonicParsing="false" text="Ротація по силці" />
+      <TextField fx:id="rotationLinkEt" layoutX="370.0" layoutY="523.0" prefHeight="25.0" prefWidth="261.0" promptText="Ротація" />
+      <TextField fx:id="rotationTimeoutEt" layoutX="414.0" layoutY="553.0" prefHeight="25.0" prefWidth="62.0" promptText="Час" />
+      <Label layoutX="374.0" layoutY="556.0" text="Сліп:">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="255.0" layoutY="60.0" mnemonicParsing="false" onAction="#loadBio" prefHeight="30.0" prefWidth="100.0" text="Біо" />
+      <CheckBox fx:id="addBio" layoutX="24.0" layoutY="403.0" mnemonicParsing="false" text="Додати біо">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="211.0" layoutY="400.0" text="Bio:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="numberBioLabel" layoutX="291.0" layoutY="401.0" prefHeight="17.0" prefWidth="49.0" text="0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="namesComboBox" layoutX="684.0" layoutY="505.0" prefHeight="25.0" prefWidth="174.0" />
+      <Label layoutX="684.0" layoutY="481.0" text="Імена">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="bindProxy" layoutX="684.0" layoutY="547.0" mnemonicParsing="false" text="Прив'язати проксі до потоку">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </CheckBox>
+      <TextField fx:id="timeoutForChangingNumberEt" layoutX="280.0" layoutY="286.0" prefHeight="25.0" prefWidth="70.0" promptText="зміна номера" />
+      <Label layoutX="206.0" layoutY="288.0" text="Затримка:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
